@@ -1,0 +1,193 @@
+/* filename: style.css */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* CSS Variables for Theme */
+:root {
+  --bg: #0d1117; /* Dark background */
+  --text: #e6e6e6; /* Light text */
+  --primary: #00ff88; /* Neon green */
+  --accent: #00bfff; /* Neon blue */
+  --glass-bg: rgba(255, 255, 255, 0.05); /* Glassmorphism background */
+  --blur: 10px; /* Blur for glass */
+  --radius: 8px; /* Border radius */
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+}
+
+/* Typography */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1, h2 {
+  font-weight: 600;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Layout */
+header {
+  padding: var(--spacing-sm);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-sm);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: background 0.3s ease;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+  background: var(--glass-bg);
+  color: var(--accent);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+footer {
+  text-align: center;
+  padding: var(--spacing-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Components */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-section, .about-section, .download-section {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+input, button {
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  background: var(--glass-bg);
+  color: var(--text);
+}
+
+button {
+  background: var(--primary);
+  color: var(--bg);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--accent);
+}
+
+.error {
+  color: #ff4d4d;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  border-radius: var(--radius);
+  transition: box-shadow 0.3s ease;
+}
+
+.neon:hover {
+  box-shadow: 0 0 10px var(--primary), 0 0 20px var(--accent);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: var(--spacing-md);
+  border-radius: var(--radius);
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+  color: var(--bg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    padding: var(--spacing-sm);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

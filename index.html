@@ -1,0 +1,45 @@
+<!-- filename: index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novatech - Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="#" id="logout" style="display: none;">Logout</a></li> <!-- Hidden on login page -->
+      </ul>
+      <button class="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">☰</button>
+    </nav>
+  </header>
+  <main>
+    <section class="login-section glass">
+      <h1>Login to Novatech Mini Portal</h1>
+      <form id="login-form" aria-labelledby="login-heading">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required aria-required="true">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required aria-required="true">
+        
+        <button type="submit">Login</button>
+        <div id="login-error" class="error" aria-live="polite"></div>
+      </form>
+      <noscript>
+        <p>JavaScript is required for login validation and session management. Without it, pages are accessible but unprotected.</p>
+      </noscript>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Novatech. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# filename: novatech-info.txt
+Novatech Information
+
+This is a sample info file for Novatech Mini Portal.
+
+Details:
+- Futuristic tech innovations
+- AI-driven solutions
+- Sustainable energy systems
+- Founded in 2020
