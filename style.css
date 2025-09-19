@@ -139,6 +139,7 @@ button:hover {
   display: inline-block;
   padding: 1rem 2rem;
   background: var(--primary);
+  color: var(--bg);
   border-radius: var(--radius);
   transition: box-shadow 0.3s ease;
 }
